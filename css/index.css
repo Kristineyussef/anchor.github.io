@@ -1,0 +1,580 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --background-light: #f0f4f8;
+    --white: #ffffff;
+    --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-light);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}
+
+.nav-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+
+.video-button-container {
+    margin-bottom: 40px;
+    pointer-events: auto;
+}
+
+.video-button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+   
+}
+
+.video-button:hover {
+    background: linear-gradient(45deg, var(--secondary-color), #003f7f);
+    transform: scale(1.1);
+   
+}
+
+
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 2;
+}
+
+.container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: yellow;
+}
+
+.about {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, var(--white), var(--background-light));
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-text {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+.about-grain, .about-bulk {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    
+}
+
+.grains-image-gallery, .maritime-image-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 1 calc(33.333% - 1rem); /* Ensure consistent size */
+    max-width: 300px; /* Limit the maximum width */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.grains-image, .maritime-image {
+    width: 100%;
+    height: 200px; /* Ensure consistent height */
+    object-fit: cover;
+}
+
+.grains-image-gallery img {
+    width: 100%;
+    height: 400px; /* Match the height of .maritime-image */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.maritime-solutions-container,
+.our-services-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    align-items: center;
+}
+
+.maritime-text-content,
+.service-text-content {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.maritime-text-content:hover
+.service-text-content:hover {
+    transform: translateY(-10px);
+}
+
+.maritime-title,
+.service-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.maritime-description,
+.service-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.feature-grid,
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2c3e50;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    background-color: #f1f4f8;
+}
+
+.feature-item svg {
+    stroke: #3498db;
+    flex-shrink: 0;
+}
+
+.maritime-image-gallery,
+.grains-image-gallery {
+    flex: 1;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.maritime-image,
+.grains-image-gallery {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.grains-image-gallery img {
+    width: 100%;
+    height: 400px; /* Match the height of .maritime-image */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.footer {
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Navigation Section */
+.nav-fleet {
+    background-color: #004080;
+    color: white;
+    padding: 10px 0;
+}
+
+.nav-fleet .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Fleet Grid Section */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.grid-item h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #004080;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--background-light);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Contact Section */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .maritime-solutions-container,
+    .our-services-container {
+        flex-direction: column;
+    }
+
+    .feature-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav li {
+        margin-left: 0;
+    }
+
+    .about {
+        padding: 40px 10px;
+    }
+
+    .about-container {
+        padding: 0 10px;
+    }
+
+    .video-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-fleet .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .grid-item {
+        text-align: center;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nav a {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .footer {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+
+    .maritime-image,
+    .grains-image-gallery img {
+        height: 250px; /* Ensure consistent height for both */
+    }
+
+    .nav img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
