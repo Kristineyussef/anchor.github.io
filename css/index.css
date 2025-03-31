@@ -568,6 +568,9 @@ body {
         height: 250px; /* Ensure consistent height for both */
     }
 
+   .image-overlay {
+        font-size: 0.8rem;
+    }
     .nav img {
         width: 100px;
         height: 100px;
